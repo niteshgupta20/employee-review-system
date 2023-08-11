@@ -1,0 +1,18 @@
+<link rel="stylesheet" href="/css/admin.css" />
+
+<div class="container main-body">
+  <div class="header">
+    <div class="heading active bg-info border" onclick="showBody(this,'allUsers')">All Users</div>
+    <div class="heading border-left border-right bg-info border" onclick="showBody(this,'pendingReviews')">
+      Pending Reviews
+    </div>
+    <div class="heading bg-info border" onclick="showBody(this,'submittedReviews')">
+      Submitted Reviews
+    </div>
+  </div>
+  <div class="home-body show" id="allUsers"><%- include('allUser') %></div>
+  <div class="home-body" id="pendingReviews"><%- include('pending-reviews') %></div>
+  <div class="home-body" id="submittedReviews"><%- include('submitted-reviews') %></div>
+</div>
+
+<script src="/js/admin.js"></script>

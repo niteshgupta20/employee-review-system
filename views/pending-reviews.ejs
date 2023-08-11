@@ -1,0 +1,27 @@
+<table class="table table-dark table-striped table-hover table-bordered border-light" id="pending-reviews-table">
+  <thead>
+    <tr>
+      <th>Employee</th>
+      <th>Email</th>
+      <th>Submit Feedback</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% pending_reviews.forEach(review=> { %>
+
+      <tr id="row-<%= review.forUser.id %>">
+        <td class="user-name">
+          <%= review.forUser.name %>
+        </td>
+        <td class="user-email">
+          <%= review.forUser.email %>
+        </td>
+        <td>
+          <i class="fas fa-edit" style="color: #1255ca" data-bs-toggle="modal" data-bs-target="#modal"
+            onclick="openFeedbackForm(this,'<%- review.forUser.id %>')"></i>
+        </td>
+      </tr>
+
+      <% }) %>
+  </tbody>
+</table>

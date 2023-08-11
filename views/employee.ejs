@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="/css/admin.css" />
+<link rel="stylesheet" href="/css/employee.css" />
+
+<div class="container main-body">
+  <div class="header">
+    <div class="heading active bg-info border border-2" onclick="showBody(this,'pendingReviews')">
+      Pending Reviews
+    </div>
+    <div class="heading  bg-info border border-2" onclick="showBody(this,'submittedReviews')">
+      Submitted Reviews
+    </div>
+  </div>
+  <div class="home-body show" id="pendingReviews"><%- include('pending-reviews') %></div>
+  <div class="home-body" id="submittedReviews"><%- include('submitted-reviews') %></div>
+</div>

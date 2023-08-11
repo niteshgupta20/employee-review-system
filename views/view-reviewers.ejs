@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="/css/admin.css" />
+
+<div class="container main-body">
+  <div class="flex-center below-header heading">
+    <%= employee.name %><br>
+      <%= employee.email %>
+  </div>
+  <div class="home-body show">
+    <table class="table table-dark table-striped table-hover table-bordered border-light" id="assign-reviewers-table">
+      <thead>
+        <tr>
+          <th>Employee</th>
+          <th>Email-Id</th>
+          <th>Feedback</th>
+          <!-- <th>Remove Reviewer</th> -->
+        </tr>
+      </thead>
+      <tbody>
+        <% employee.reviewers.forEach(reviewer=> { %>
+
+          <tr id="row-id">
+            <td>
+              <%= reviewer.name %>
+            </td>
+            <td>
+              <%= reviewer.email %>
+            </td>
+            <td>
+              <i class="fas fa-edit text-primary" data-bs-toggle="modal" data-bs-target="#modal"
+                onclick="editFeedbackForm(this,'<%- employee.id %>','<%- reviewer.id %>')"></i>
+            </td>
+          </tr>
+
+          <% }) %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<script src="/js/admin.js"></script>

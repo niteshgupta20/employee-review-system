@@ -1,0 +1,27 @@
+<header id="layout-header">
+  <nav class="navbar navbar-dark border-bottom border-white">
+    <div class="container-fluid">
+      <div class="navbar-brand">ERS</div>
+      <form class="d-flex justify-content-center align-items-center">
+        <% if (title!='Sign In' && title!='Sign Up' ) { %>
+          <div class="user-name m-2">
+            <%= user.name %>
+          </div>
+
+          <div class="icon">
+            <a href="/user/sign-out" class="btn btn-danger">
+              Logout
+            </a>
+          </div>
+
+          <% } else { %>
+            <% if (title=='Sign In' ) { %>
+              <a href="/user/sign-up"><button type="button" class="btn btn-success">SIGN UP</button></a>
+              <% } else if (title=='Sign Up' ) { %>
+                <a href="/user/sign-in"><button type="button" class="btn btn-success">SIGN IN</button></a>
+                <% } %>
+                  <% } %>
+      </form>
+    </div>
+  </nav>
+</header>
